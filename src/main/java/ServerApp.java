@@ -1,4 +1,5 @@
 import DB.DBConnection;
+import Servlets.LoginServlet;
 import Servlets.RegisterServlet;
 import Servlets.TestServlet;
 import Servlets.UserServlet;
@@ -18,6 +19,7 @@ public class ServerApp {
 
         handler.addServlet(UserServlet.class, "/users");
         handler.addServlet(new ServletHolder(new RegisterServlet(connection)), "/reg");
+        handler.addServlet(new ServletHolder(new LoginServlet(connection)), "/login");
 
 
         Server server = new Server(8080);
