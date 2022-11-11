@@ -13,4 +13,13 @@ public class UserService {
     public void addUser(User user){
         userDao.add(user);
     }
+
+    public int getUserId(User user){
+        return userDao.getAl()
+                .stream()
+                .filter(u -> u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword()))
+                .findFirst()
+                .orElse(null)
+                .getId();
+    }
 }

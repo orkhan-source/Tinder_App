@@ -1,5 +1,8 @@
 package Servlets;
 
+import Dao.UserDao;
+import Entities.User;
+import Services.UserService;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 
@@ -16,9 +19,11 @@ import java.sql.Connection;
 public class LoginServlet extends HttpServlet {
 
     private final Connection connection;
+    private UserService userService;
 
     public LoginServlet(Connection connection) {
         this.connection = connection;
+        this.userService = new UserService(new UserDao(connection));
     }
 
     @Override
@@ -40,6 +45,15 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
+
+        String email = rq.getParameter("email");
+        String password = rq.getParameter("password");
+        User user = new User(email, password);
+
+        int uID = userService.getUserId(user);
+
+
+        rs.sendRedirect("/users");
 
     }
 }

@@ -18,6 +18,10 @@ public class User {
     private boolean gender;
     private String imageUrl;
 
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 
     public User(String email, String password, String name, String surname, boolean gender, String imageUrl) {
         this.email = email;

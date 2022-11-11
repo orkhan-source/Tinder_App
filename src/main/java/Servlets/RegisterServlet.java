@@ -59,9 +59,5 @@ public class RegisterServlet extends HttpServlet {
         userService.addUser(user);
 
         rs.sendRedirect("/login");
-
-
-
-
     }
 }
