@@ -2,6 +2,7 @@ package Servlets;
 
 import Dao.UserDao;
 import Entities.User;
+import Services.CookieService;
 import Services.UserService;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
@@ -51,8 +52,8 @@ public class LoginServlet extends HttpServlet {
         User user = new User(email, password);
 
         int uID = userService.getUserId(user);
-
-
+        CookieService cookieService = new CookieService(rq, rs);
+        cookieService.addCookie(uID);
         rs.sendRedirect("/users");
 
     }
