@@ -51,6 +51,7 @@ public class LoginServlet extends HttpServlet {
         String password = rq.getParameter("password");
         User user = new User(email, password);
 
+
         int uID = userService.getUserId(user);
         CookieService cookieService = new CookieService(rq, rs);
         cookieService.addCookie(uID);

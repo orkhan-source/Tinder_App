@@ -13,13 +13,14 @@ import java.sql.Connection;
 public class ServerApp {
     public static void main(String[] args) throws Exception {
 
-        ServletContextHandler handler = new ServletContextHandler();
-
         Connection connection = DBConnection.connect();
+
+        ServletContextHandler handler = new ServletContextHandler();
 
         handler.addServlet(UserServlet.class, "/users");
         handler.addServlet(new ServletHolder(new RegisterServlet(connection)), "/reg");
         handler.addServlet(new ServletHolder(new LoginServlet(connection)), "/login");
+
 
 
         Server server = new Server(8080);

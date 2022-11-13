@@ -19,7 +19,6 @@ public class CookieService {
 
     public Cookie getCookie(){
         Cookie result = null;
-
         Cookie[] cookies = rq.getCookies();
         if (cookies != null) {
             for(Cookie cookie : cookies){

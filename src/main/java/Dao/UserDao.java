@@ -59,8 +59,8 @@ public class UserDao implements DAO<User>{
             if(rs.next()){
                 user = new User(rs.getInt("id"),
                         rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getString("name"),
+                        rs.getString("u_password"),
+                        rs.getString("u_name"),
                         rs.getString("surname"),
                         rs.getBoolean("gender"),
                         rs.getString("imgurl"));
@@ -85,8 +85,8 @@ public class UserDao implements DAO<User>{
             while(rs.next()){
                 int id = rs.getInt("id");
                 String email = rs.getString("email");
-                String password = rs.getString("password");
-                String name = rs.getString("name");
+                String password = rs.getString("u_password");
+                String name = rs.getString("u_name");
                 String surname = rs.getString("surname");
                 boolean gender = rs.getBoolean("gender");
                 String imageUrl = rs.getString("imgurl");

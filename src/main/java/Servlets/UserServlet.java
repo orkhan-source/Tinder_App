@@ -1,5 +1,8 @@
 package Servlets;
 
+import freemarker.template.Configuration;
+import freemarker.template.TemplateException;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -21,11 +25,18 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
 
 
-//
-//        String filePath = "./src/main/resources/templates/like-page2.ftl";
-//        try(ServletOutputStream os = rs.getOutputStream()){
-//            Files.copy(Path.of(filePath), os);
-//        }
+        Configuration conf = new Configuration(Configuration.VERSION_2_3_30);
+        conf.setDefaultEncoding(String.valueOf((StandardCharsets.UTF_8)));
+        conf.setDirectoryForTemplateLoading(new File("src/main/resources/templates"));
+
+
+        try(PrintWriter w = rs.getWriter()){
+            conf.getTemplate("like-page2.ftl").process( new Object() ,w);
+
+        } catch (TemplateException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override
