@@ -1,8 +1,5 @@
 import DB.DBConnection;
-import Servlets.LoginServlet;
-import Servlets.RegisterServlet;
-import Servlets.TestServlet;
-import Servlets.UserServlet;
+import Servlets.*;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -17,9 +14,11 @@ public class ServerApp {
 
         ServletContextHandler handler = new ServletContextHandler();
 
-        handler.addServlet(UserServlet.class, "/users");
+        handler.addServlet(StaticFileServlet.class, "/*");
+        handler.addServlet(new ServletHolder(new UserServlet(connection)), "/users");
         handler.addServlet(new ServletHolder(new RegisterServlet(connection)), "/reg");
         handler.addServlet(new ServletHolder(new LoginServlet(connection)), "/login");
+        handler.addServlet(LikeServlet.class, "/liked");
 
 
 

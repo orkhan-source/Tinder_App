@@ -1,6 +1,5 @@
 package Dao;
 
-import DB.DBConnection;
 import Entities.User;
 
 import java.sql.*;
@@ -26,7 +25,7 @@ public class UserDao implements DAO<User>{
             st.setString(3, user.getName());
             st.setString(4, user.getSurname());
             st.setBoolean(5, user.getGender());
-            st.setString(6, user.getImageUrl());
+            st.setString(6, user.getImgurl());
             st.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -50,7 +49,7 @@ public class UserDao implements DAO<User>{
     @Override
     public User get(int id) {
         User user = null;
-        String query = "select id, email, u_name, surname, gender, imgurl from \"users\" where id = ?";
+        String query = "select id, email, u_password, u_name, surname, gender, imgurl from \"users\" where id = ?";
 
         try{
             PreparedStatement st = connection.prepareStatement(query);

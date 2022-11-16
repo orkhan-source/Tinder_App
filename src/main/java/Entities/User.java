@@ -16,20 +16,20 @@ public class User {
     private String name;
     private String surname;
     private boolean gender;
-    private String imageUrl;
+    private String imgurl;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public User(String email, String password, String name, String surname, boolean gender, String imageUrl) {
+    public User(String email, String password, String name, String surname, boolean gender, String imgurl) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.surname = surname;
         this.gender = gender;
-        this.imageUrl = imageUrl;
+        this.imgurl = imgurl;
     }
 
     public boolean getGender(){
