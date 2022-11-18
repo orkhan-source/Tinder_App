@@ -28,6 +28,7 @@
                         <h3 class="mb-0 text-truncated">${user.name}  ${user.surname}</h3>
                         <br>
                     </div>
+                    <input type="hidden" name="likedId" value=${user.id}>
                     <div class="col-12 col-lg-6">
                         <button type="submit" name="dislike" class="btn btn-outline-danger btn-block"><span class="fa fa-times"></span> Dislike</button>
                     </div>

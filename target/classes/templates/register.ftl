@@ -29,8 +29,13 @@
     <input type="text" id="inputName" name="name" class="form-control" placeholder="Name" required >
     <label class="sr-only">Surname</label>
     <input type="text" id="inputSurname" name="surname" class="form-control" placeholder="Surname" required>
+
     <label class="sr-only">Gender</label>
-    <input type="text" id="inputGender" name="gender" class="form-control" placeholder="Gender" required>
+    <select name="gender" id="selectGender" class="form-control"  required>
+        <option value="male" >Male</option>
+        <option value="female">Female</option>
+    </select>
+
     <label class="sr-only">Image</label>
     <input type="text" id="inputImageUrl" name="imgUrl" class="form-control" placeholder="Image Url" required >
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>

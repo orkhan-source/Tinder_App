@@ -73,7 +73,7 @@ public class UserDao implements DAO<User>{
     }
 
     @Override
-    public List<User> getAl() {
+    public List<User> getAll() {
         List<User> users = new ArrayList<>();
         String query = "select * from \"users\"";
 

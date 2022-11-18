@@ -21,7 +21,7 @@ public class MessageDao implements DAO<Message>{
     }
 
     @Override
-    public List<Message> getAl() {
+    public List<Message> getAll() {
         return null;
     }
 }

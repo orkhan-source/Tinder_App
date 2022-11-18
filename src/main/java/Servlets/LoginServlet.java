@@ -5,17 +5,11 @@ import Entities.User;
 import Services.CookieService;
 import Services.UserService;
 import Utils.FreemarkerEngine;
-import freemarker.template.Configuration;
-import freemarker.template.TemplateException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.util.HashMap;
 
@@ -24,6 +18,8 @@ public class LoginServlet extends HttpServlet {
     private final Connection connection;
     private UserService userService;
     private final FreemarkerEngine f = new FreemarkerEngine();
+
+    private CookieService cookieService;
 
     public LoginServlet(Connection connection) {
         this.connection = connection;
@@ -44,9 +40,8 @@ public class LoginServlet extends HttpServlet {
         String password = rq.getParameter("password");
         User user = new User(email, password);
 
-
         int uID = userService.getUserId(user);
-        CookieService cookieService = new CookieService(rq, rs);
+        cookieService = new CookieService(rq, rs);
         cookieService.addCookie(uID);
         rs.sendRedirect("/users");
 

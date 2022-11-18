@@ -18,7 +18,7 @@ public class ServerApp {
         handler.addServlet(new ServletHolder(new UserServlet(connection)), "/users");
         handler.addServlet(new ServletHolder(new RegisterServlet(connection)), "/reg");
         handler.addServlet(new ServletHolder(new LoginServlet(connection)), "/login");
-        handler.addServlet(LikeServlet.class, "/liked");
+        handler.addServlet(new ServletHolder(new LikeServlet(connection)), "/liked");
 
 
 
