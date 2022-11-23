@@ -43,6 +43,6 @@ public class LikeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
-
+        super.doPost(rq, rs);
     }
 }

@@ -48,7 +48,7 @@
                                     </td>
                                     <td class="align-middle">
                                         <form action="/message" method="get">
-                                            <input type="hidden" name="user" value="${user.id}">
+                                            <input type="hidden" name="userId" value="${user.id}">
                                             <button style="cursor: pointer" type="submit">Send message</button>
                                         </form>
                                     </td>

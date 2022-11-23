@@ -12,7 +12,6 @@ import java.util.List;
 public class LikeDao implements DAO<Like>{
 
     private Connection connection;
-    private int user_id;
 
     public LikeDao(Connection connection) {
         this.connection = connection;
