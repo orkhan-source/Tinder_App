@@ -35,12 +35,14 @@
                     <div class="col-12 col-lg-6">
                         <button type="submit" name="like" class="btn btn-outline-success btn-block"><span class="fa fa-heart"></span> Like</button>
                     </div>
+
                     <!--/col-->
                 </div>
                 <!--/row-->
             </div>
             <!--/card-block-->
         </div>
+        <a href="/logout" role="button" class="btn btn-danger" style="display: block;width:130px;">Log out</a>
     </form>
 </div>
 

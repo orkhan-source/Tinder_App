@@ -20,6 +20,7 @@ public class ServerApp {
         handler.addServlet(new ServletHolder(new LoginServlet(connection)), "/login");
         handler.addServlet(new ServletHolder(new LikeServlet(connection)), "/liked");
         handler.addServlet(new ServletHolder(new MessageServlet(connection)), "/message");
+        handler.addServlet(new ServletHolder(new LogoutServlet()), "/logout");
 
 
 

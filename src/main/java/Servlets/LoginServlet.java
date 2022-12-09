@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
-        f.render(rs, "login2.ftl", new HashMap<>());
+        f.render(rs, "login.ftl", new HashMap<>());
 
     }
 

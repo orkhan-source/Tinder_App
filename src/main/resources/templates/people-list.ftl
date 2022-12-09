@@ -61,6 +61,7 @@
             </div>
         </div>
     </div>
+    <a href="/logout" role="button" class="btn btn-danger" style="display: block;width:130px;">Log out</a>
 </div>
 
 </body>

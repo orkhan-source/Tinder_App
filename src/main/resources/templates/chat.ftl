@@ -90,6 +90,7 @@
                     <div class="col-12 col-lg-6">
                         <input type="hidden" name="recId" value="${receiver.id}">
                         <button style="cursor: pointer" type="submit">Send</button>
+                        <a href="/logout" role="button" class="btn btn-danger" style="display: block;width:130px;">Log out</a>
                     </div>
            </div>
     </form>
