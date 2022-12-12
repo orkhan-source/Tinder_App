@@ -41,4 +41,16 @@ public class CookieService {
                             cookie.setMaxAge(0);
                         }}).forEach(cookie -> rs.addCookie(cookie));
     }
+
+    public boolean isCookiePresent(){
+        Cookie[] cookies = rq.getCookies();
+        if (cookies != null) {
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equalsIgnoreCase(USER_ID)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
